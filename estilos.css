@@ -1,0 +1,67 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box; /*para que el tamaño de los elementos no se modifique*/
+}
+
+body{
+    margin:0;
+    display: flex; /*permite que los elementos se acomoden en varias lineas*/
+    background-color: #9867c5;
+    justify-content: center;
+    align-items: center;
+    position: relative; /*para que el contenedor se ajuste al tamaño de los elementos*/
+}
+
+img{
+    height: 100px;
+    width: 80px;
+    object-fit: cover; /*para que la imagen se ajuste al tamaño del contenedor*/
+    border-radius: 5px;
+}
+
+.memorama {
+    margin: auto;
+    display: grid; 
+    grid-template-columns: repeat(4, 80px); /*repite 4 veces el tamaño de la imagen*/
+    gap: 10px; 
+    width: max-content; /*para que el contenedor se ajuste al tamaño de los elementos*/
+    padding: 80px;
+    flex-wrap: wrap;   /*permite que los elementos se acomoden en varias lineas*/
+    perspective: 1000px;  /*distancia entre el usuario y el objeto*/
+    border-radius: 10px; 
+}
+
+.carta{
+    height: 100px;
+    width: 80px;
+    cursor: pointer;
+    position: relative;
+    transform: scale(1); /*tamaño de la carta*/
+    transform-style: preserve-3d; 
+    transition: transform .3s;  /*tiempo que tarda en voltearse la carta*/
+}
+
+.carta:active{   /*se activa cuando se le da clic a la carta */
+    transform: scale(.97);
+    transition: transform .2s; /*tiempo que tarda en voltearse la carta*/
+}
+
+.carta.flip {
+    transform: rotateY(180deg); /*voltea la carta*/
+}
+
+.gato,
+.jalowin   {   /*parte trasera e imagen revelada de la carta*/
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    border-radius: 5px;
+    background: #ee9d35;
+    backface-visibility: hidden;   /*oculta la parte trasera de la carta*/
+}
+
+.gato {
+    transform: rotateY(180deg); /*voltea la carta*/
+}
+    
