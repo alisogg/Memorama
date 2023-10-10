@@ -6,7 +6,7 @@
 
 body{
     margin:0;
-    display: flex; /*permite que los elementos se acomoden en varias lineas*/
+    display: block; /*permite que los elementos se acomoden en varias lineas*/
     background-color: #9867c5;
     justify-content: center;
     align-items: center;
@@ -24,11 +24,10 @@ img{
     margin: auto;
     display: grid; 
     grid-template-columns: repeat(4, 80px); /*repite 4 veces el tamaño de la imagen*/
-    gap: 10px; 
+    gap: 10px; /*espacio entre las imagenes*/
     width: max-content; /*para que el contenedor se ajuste al tamaño de los elementos*/
-    padding: 80px;
+    padding: 40px;
     flex-wrap: wrap;   /*permite que los elementos se acomoden en varias lineas*/
-    perspective: 1000px;  /*distancia entre el usuario y el objeto*/
     border-radius: 10px; 
 }
 
@@ -38,7 +37,7 @@ img{
     cursor: pointer;
     position: relative;
     transform: scale(1); /*tamaño de la carta*/
-    transform-style: preserve-3d; 
+    transform-style: preserve-3d;
     transition: transform .3s;  /*tiempo que tarda en voltearse la carta*/
 }
 
@@ -64,4 +63,3 @@ img{
 .gato {
     transform: rotateY(180deg); /*voltea la carta*/
 }
-    
